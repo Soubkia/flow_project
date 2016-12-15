@@ -7,22 +7,22 @@ sctr = IEN(:,e);
 de = d(sctr);    % extract temperature at  element nodes
 C  = [x(sctr); y(sctr)]'; 
 
-[w,gp] = gauss(ngp);   % get Gauss points and weights
+x1 = C(1,1);
+x2 = C(2,1);
+x3 = C(3,1);
+y1 = C(1,2);
+y2 = C(2,2);
+y3 = C(3,2);
 
-% compute flux vector
-ind = 1;
-for i=1:ngp
-   for j=1:ngp
-       eta = gp(i);  psi = gp(j);
-      
-       N             = NmatHeat2D(eta,psi);
-       [B, detJ]     = BmatHeat2D(eta,psi,C);
+Ae = 0.5 * ((x2 * y3 - x3 * y2) - (x1 * y3 - x3 * y1) + (x1 * y2 - x2 * y1));
+B = [ (y2 - y3) (y3 - y1) (y1 - y2)
+      (x3 - x2) (x1 - x3) (x2 - x1) ];
+B = (1 / (2 * Ae)) .* B;
+ke = B' * B * Ae;
 
-       X(ind,:) =  N*C;                      % gauss points in physical coordinates  
-       q(:,ind) =  -D*B*de;                  % compute the flux 
-       ind     = ind + 1;
-   end
-end
+X(1,:) =  [ mean(C(:,1)) mean(C(:,2)) ];  % centroid of the triangle
+q(:,1) =  -D*B*de;                        % compute the flux 
+
 q_x = q(1,:);
 q_y = q(2,:);
 

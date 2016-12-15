@@ -8,24 +8,16 @@ fe  = zeros(nen,1);      % initialize element nodal source vector
 je = IEN(:,e);  
 C  = [x(je); y(je)]'; 
 
-[w,gp] = gauss(ngp);    % get gauss points and weights
+x1 = C(1,1);
+x2 = C(2,1);
+x3 = C(3,1);
+y1 = C(1,2);
+y2 = C(2,2);
+y3 = C(3,2);
 
-% compute element conductance matrix and nodal flux vector 
-for i=1:ngp
-   for j=1:ngp
-       eta = gp(i);            
-       psi = gp(j);
- 
-       N             = NmatHeat2D(eta,psi);       % shape functions matrix  
-       [B, detJ]     = BmatHeat2D(eta,psi,C);     % derivative of the shape functions
-
-       ke = ke + w(i)*w(j)*B'*D*B*detJ;   % element conductance matrix
-       se = N*s(:,e);                     % compute s(x)
-       fe = fe + w(i)*w(j)*N'*se*detJ;    % element nodal source vector
-
-   end       
-end
-
-
-
-
+Ae = 0.5 * ((x2 * y3 - x3 * y2) - (x1 * y3 - x3 * y1) + (x1 * y2 - x2 * y1));
+B = [ (y2 - y3) (y3 - y1) (y1 - y2)
+      (x3 - x2) (x1 - x3) (x2 - x1) ];
+B = (1 / (2 * Ae)) .* B;
+ke = B' * B * Ae;
+fe = [ 0 0 0 ]';

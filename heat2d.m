@@ -1,3 +1,4 @@
+#!/usr/local/bin/octave --persist
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Heat conduction in 2D (Chapter 8)         %
 % Haim Waisman, Columbia University         %
