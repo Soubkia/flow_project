@@ -36,7 +36,7 @@ fprintf(1,'\t\t\t%f\t\t\t%f\t\t\t%f\t\t\t%f\n',flux_e1');
 
 if strcmpi(plot_flux,'yes')==1 & strcmpi(plot_mesh,'yes') ==1;  
     figure(1); 
-    quiver(X(:,1),X(:,2),q_x',q_y','k');
+    quiver(X(:,1),X(:,2),q_x',q_y',0.3,'k');
     plot(X(:,1),X(:,2),'rx');
     title('Heat Flux');
     xlabel('X');
