@@ -7,5 +7,6 @@ include_flags;
 %input_file_16ele;
 %input_file_64ele;
 circle_coarse_inp;
+%circle_fine_inp;
 %pill_coarse_inp;
-
+%pill_fine_inp;

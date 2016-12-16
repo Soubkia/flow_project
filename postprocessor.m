@@ -7,24 +7,24 @@ if strcmpi(plot_temp,'yes')==1;
 %   d1 = d(ID);
    figure(2); 
    for e=1:nel
-       XX = [x(IEN(1,e))  x(IEN(2,e))  x(IEN(3,e))  x(IEN(1,e))];
-       YY = [y(IEN(1,e))  y(IEN(2,e))  y(IEN(3,e))  y(IEN(1,e))];
-       dd = [d(IEN(1,e)) d(IEN(2,e)) d(IEN(3,e)) d(IEN(1,e))];
-       patch(XX,YY,dd);hold on;  
+	   XX = [x(IEN(1,e))  x(IEN(2,e))  x(IEN(3,e))  x(IEN(1,e))];
+	   YY = [y(IEN(1,e))  y(IEN(2,e))  y(IEN(3,e))  y(IEN(1,e))];
+	   dd = [d(IEN(1,e)) d(IEN(2,e)) d(IEN(3,e)) d(IEN(1,e))];
+	   patch(XX,YY,dd);hold on;  
    end
-title('Potential flow'); xlabel('X'); ylabel('Y'); colorbar;
+title('Potential flow'); xlabel('X'); ylabel('Y'); colormap jet; colorbar;
 axis equal
 end
 
 %Compute flux at gauss points
 if strcmpi(compute_flux,'yes')==1;  
-    fprintf(1,'\n                     Flux at Gauss Points \n')
-    fprintf(1,'----------------------------------------------------------------------------- \n')
-    for e=1:nel
-    fprintf(1,'Element  %d \n',e)
-    fprintf(1,'-------------\n')       
-        get_flux(d,e);
-    end
+	fprintf(1,'\n                     Flux at Gauss Points \n')
+	fprintf(1,'----------------------------------------------------------------------------- \n')
+	for e=1:nel
+	fprintf(1,'Element  %d \n',e)
+	fprintf(1,'-------------\n')
+		get_flux(d,e);
+	end
 end
 
 %Plot velocity potential around FGH by angle
