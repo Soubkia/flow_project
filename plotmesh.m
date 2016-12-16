@@ -17,6 +17,10 @@ for i=1:nbe
 end
     legend('natural B.C. (flux)');
 
+% plot Essential BC
+plot([min(x) max(x)], [max(y) max(y)],'b','LineWidth',4); hold on;
+plot([min(x) max(x)], [min(y) min(y)],'b','LineWidth',4); hold on;
+legend('essential B.C. (flux)');
     
     
 
