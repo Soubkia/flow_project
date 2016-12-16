@@ -17,15 +17,13 @@ for e = 1:nel
     
     sctr = IEN(:,e);
 
-    if bonus == 'yes'
-        [ke, fe] = heat2DelemBonus(e);
-    else
-        [ke, fe] = heat2Delem(e);
-    end
+	%[ke, fe] = heat2DelemBonus(e);
+	[ke, fe] = heat2Delem(e);
 
     K(sctr,sctr) = K(sctr,sctr) + ke;
     f(sctr)      = f(sctr) + fe;    
 end
+fprintf('Average Half Bandwidth: %d\n', ahbw(K));
 
 % Compute and assemble nodal boundary flux vector and point sources
 f = src_and_flux(f);

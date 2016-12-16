@@ -16,7 +16,7 @@ title('Potential flow'); xlabel('X'); ylabel('Y'); colorbar;
 axis equal
 end
 
-Compute flux at gauss points
+%Compute flux at gauss points
 if strcmpi(compute_flux,'yes')==1;  
     fprintf(1,'\n                     Flux at Gauss Points \n')
     fprintf(1,'----------------------------------------------------------------------------- \n')
