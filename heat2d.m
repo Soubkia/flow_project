@@ -16,8 +16,12 @@ include_flags;
 for e = 1:nel        
     
     sctr = IEN(:,e);
-    
-    [ke, fe] = heat2Delem(e); 
+
+    if bonus == 'yes'
+        [ke, fe] = heat2DelemBonus(e);
+    else
+        [ke, fe] = heat2Delem(e);
+    end
 
     K(sctr,sctr) = K(sctr,sctr) + ke;
     f(sctr)      = f(sctr) + fe;    
