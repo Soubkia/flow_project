@@ -24,5 +24,5 @@ q(:,1) =  -D*B*de; % compute the flux
 q_x = q(1,:);
 q_y = q(2,:);
 
-const = 5;
+const = 5; % arbitrarily chosen, could be anything depending on the problem.
 pressure = const - 0.5*(q_x^2 + q_y^2); % from bernoulli
