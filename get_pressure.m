@@ -25,4 +25,4 @@ q_x = q(1,:);
 q_y = q(2,:);
 
 const = 5;
-pressure = const - 0.5*(q_x^2 + q_y^2);
+pressure = const - 0.5*(q_x^2 + q_y^2); % from bernoulli

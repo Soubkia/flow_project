@@ -16,7 +16,7 @@ y2 = C(2,2);
 y3 = C(3,2);
 
 GNe = [ -1 1 0
-        -1 0 1 ];
+        -1 0 1 ]; % GNe turns out to be a constant in the natural domain
 Ae = 0.5 * 1 * 1;
 J = GNe * [ x1 y1
             x2 y2
