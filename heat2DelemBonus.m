@@ -1,3 +1,6 @@
+% Solves for element stiffness matricies using isoparametric triangles in the
+% natural domain. Can be toggled for use by setting `use_iso_tri` equal to
+% "yes" in any `_inp.m` file.
 function [ke, fe] = heat2DelemBonus(e)
 include_flags;
 

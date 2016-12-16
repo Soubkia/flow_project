@@ -1,3 +1,6 @@
+% Gets and plots the flux by direct construction in the physical domain.
+% Minimal modifications made. Can be toggled for use by setting `compute_flux`
+% equal to "yes" in any `_inp.m` file.
 function get_flux(d,e);
 include_flags;
 

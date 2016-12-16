@@ -1,4 +1,9 @@
 #!/usr/bin/python
+'''
+@python python2.7
+Reads the output from ABAQUS and convert_inputs.tmpl to generate input for
+the matlab program.
+'''
 import glob
 import os
 from collections import namedtuple
@@ -11,6 +16,7 @@ def convertFile(path):
 
     section = None
     with open(path) as inp:
+        # Loop through abaqus output and construct map of nodes and elements
         for line in inp:
             line = [line.replace(',', '').strip() for line in line.split()]
             if not len(line): continue
@@ -19,12 +25,15 @@ def convertFile(path):
                 section = line[0][1:]
                 continue
 
+            # Section with node values
             if section == 'Node':
                 nodes[int(line[0])] = Node(float(line[1]), float(line[2]))
 
+            # Section with element connectivity
             if section == 'Element':
                 elements[int(line[0])] = Element(int(line[1]), int(line[2]), int(line[3]))
     outPath = '{}.m'.format(path.replace('.', '_').replace('-', '_'))
+    # Write output file for matlab
     with open(outPath, 'w') as out:
         print('overwriting {}'.format(outPath))
         out.write(Config(nodes, elements).output_text)
@@ -42,6 +51,7 @@ def getNaturalBoundaries(nodes, elements):
         
 
 class Config(object):
+    '''Class that generates a config given nodes and elements'''
     def __init__(self, nodes, elements, ngp=2):
         self.nodes = nodes
         self.elements = elements
@@ -82,6 +92,7 @@ class Config(object):
 
 
 def main():
+    # Scrape all input files in the current directory.
     for path in glob.glob('*.inp'):
         convertFile(path)
 

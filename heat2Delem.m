@@ -1,3 +1,4 @@
+% Solves for the element stiffness matricies in the physical domain.
  function [ke, fe] = heat2Delem(e)
 include_flags;
 

@@ -1,3 +1,6 @@
+% Handler for all analysis done after solution is found. This is where most
+% of the graphing and calculation is done.
+
 % plot temperature and flux
 function postprocess(d);
 include_flags

@@ -1,3 +1,5 @@
+% Similar to `get_flux.m`. Uses bernoulli's equaton. Can be toggled for use by
+% setting `plot_press` equal to "yes" in any `_inp.m` file.
 function [pressure] = get_pressure(d,e);
 include_flags;
 
