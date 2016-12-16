@@ -5,7 +5,7 @@ include_flags
 % plot the temperature field
 if strcmpi(plot_temp,'yes')==1;  
 %   d1 = d(ID);
-   figure(2); 
+   figure('units','normalized','outerposition',[0 0 1 1]);
    for e=1:nel
 	   XX = [x(IEN(1,e))  x(IEN(2,e))  x(IEN(3,e))  x(IEN(1,e))];
 	   YY = [y(IEN(1,e))  y(IEN(2,e))  y(IEN(3,e))  y(IEN(1,e))];
@@ -13,7 +13,7 @@ if strcmpi(plot_temp,'yes')==1;
 	   patch(XX,YY,dd);hold on;  
    end
 title('Potential flow'); xlabel('X'); ylabel('Y'); colormap jet; colorbar;
-axis equal
+axis equal; xlim([min(x), max(x)]); ylim([min(y), max(y)]);
 end
 
 %Compute flux at gauss points
@@ -27,8 +27,22 @@ if strcmpi(compute_flux,'yes')==1;
 	end
 end
 
+%Compute pressure
+if strcmpi(plot_press,'yes')==1;
+	figure('units','normalized','outerposition',[0 0 1 1]);
+	for e=1:nel
+		XX = [x(IEN(1,e))  x(IEN(2,e))  x(IEN(3,e))  x(IEN(1,e))];
+		YY = [y(IEN(1,e))  y(IEN(2,e))  y(IEN(3,e))  y(IEN(1,e))];
+		pressure = get_pressure(d,e);
+		pp = [pressure pressure pressure pressure];
+		patch(XX,YY,pp); hold on;
+	end
+	title('Pressure'); xlabel('X'); ylabel('Y'); colormap jet; colorbar;
+	axis equal; xlim([min(x), max(x)]); ylim([min(y), max(y)]);
+end
+
 %Plot velocity potential around FGH by angle
-figure(3);
+figure(4);
 fgh = [ ];
 radius = 1.25;
 tlrnc = 0.1;
@@ -53,7 +67,7 @@ title('Velocity Potential along FGH');
 xlabel('Angle'); ylabel('Velocity potential');
 
 %Plot velocity potential around EE' FF' GG'
-figure(4)
+figure(5)
 EE = [ ];
 FF = [ ];
 GG = [ ];

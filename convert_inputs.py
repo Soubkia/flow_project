@@ -53,7 +53,7 @@ class Config(object):
 
         self.n_bc = getNaturalBoundaries(self.nodes, self.elements)
         self.nbe = len(self.n_bc)
-        self.n_bc = '[{}\n{}\n{}\n{}]'.format(' '.join([str(edge[0]) for edge in self.n_bc]),
+        self.n_bc = '[{}; {}; {}; {}]'.format(' '.join([str(edge[0]) for edge in self.n_bc]),
                                               ' '.join([str(edge[1]) for edge in self.n_bc]),
                                               ' '.join([str(edge[2]) for edge in self.n_bc]),
                                               ' '.join([str(edge[3]) for edge in self.n_bc]))
@@ -63,7 +63,7 @@ class Config(object):
         self.nel = len(elements)
         self.x = '[{}]'.format(' '.join([str(node.x) for node in self.nodes.itervalues()]))
         self.y = '[{}]'.format(' '.join([str(node.y) for node in self.nodes.itervalues()]))
-        self.IEN = '[{}]'.format(''.join(['{} {} {}\n'.format(elm.first, elm.second, elm.third)
+        self.IEN = '[{}]'.format('; '.join(['{} {} {}'.format(elm.first, elm.second, elm.third)
                                              for elm in self.elements.itervalues()]))
 
         with open('convert_inputs.tmpl', 'r') as tmpl:
@@ -84,6 +84,7 @@ class Config(object):
 def main():
     for path in glob.glob('*.inp'):
         convertFile(path)
+
 
 if __name__ == "__main__":
     main()

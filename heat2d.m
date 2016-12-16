@@ -17,8 +17,11 @@ for e = 1:nel
     
     sctr = IEN(:,e);
 
-	%[ke, fe] = heat2DelemBonus(e);
-	[ke, fe] = heat2Delem(e);
+	if strcmpi(use_iso_tri, 'yes') == 1
+		[ke, fe] = heat2DelemBonus(e);
+	else
+		[ke, fe] = heat2Delem(e);
+	end
 
     K(sctr,sctr) = K(sctr,sctr) + ke;
     f(sctr)      = f(sctr) + fe;    

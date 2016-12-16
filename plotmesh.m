@@ -2,6 +2,8 @@ function plotmesh;
 include_flags;
 
 if strcmpi(plot_mesh,'yes')==1;  
+figure('units','normalized','outerposition',[0 0 1 1]);
+axis equal;
 % plot Natural BC
 for i=1:nbe
     
