@@ -215,21 +215,21 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 #### Coarse
 
-![](./assets/circle_coarse_mesh.tif)
+![](./assets/circle_coarse_mesh.png)
 
 #### Fine
 
-![](./assets/circle_fine_mesh.tif)
+![](./assets/circle_fine_mesh.png)
 
 ### Pill
 
 #### Coarse
 
-![](./assets/pill_coarse_mesh.tif)
+![](./assets/pill_coarse_mesh.png)
 
 #### Fine
 
-![](./assets/pill_fine_mesh.tif)
+![](./assets/pill_fine_mesh.png)
 
 ## Question 4
 
@@ -249,7 +249,7 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ### Circle
 
-![](./assets/circle_coarse_u.tif)
+![](./assets/circle_coarse_u.png)
 
 ### Pill
 
@@ -262,13 +262,13 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ### Circle
 
-![](./assets/circle_abaqus_arrows.tif)
-![](./assets/circle_fine_vp.tif)
+![](./assets/circle_abaqus_arrows.png)
+![](./assets/circle_fine_vp.png)
 
 ### Pill
 
-![](./assets/pill_abaqus_arrows.tif)
-![](./assets/pill_fine_vp.tif)
+![](./assets/pill_abaqus_arrows.png)
+![](./assets/pill_fine_vp.png)
 
 ## Question 7
 
