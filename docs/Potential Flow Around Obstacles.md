@@ -263,7 +263,7 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 ### Circle
 
 ![](./assets/circle_abaqus_arrows.tif)
-![](.assets/circle_fine_vp.tif)
+![](./assets/circle_fine_vp.tif)
 
 ### Pill
 
