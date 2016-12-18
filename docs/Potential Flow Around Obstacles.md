@@ -10,9 +10,9 @@ Lyuchen Zhou (lz2511)
 
 Consider the following 2D steady-state potential flow problems of a fluid flowing around a circular and rounded obstacles, between two parallel plates. Ideal (potential) flow assumption asserts that the flow is irrotational, inviscid and incompressible. The approaching velocity of thefluid is given as $u = 1\frac{m}{s}$ and $𝐿 = 5 m$.
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pfig1.png)
+![](./assets/pfig1.png)
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pfig2.png)
+![](./assets/pfig2.png)
 
 Conservation of mass for an ideal flow in the control volume is given by the following Eq.
 
@@ -22,11 +22,15 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0 \text{ in th
 $$ \nabla^2 \phi = 0 \text{ in the domain } \Omega $$
 And the boundary conditions are given in terms of the velocity potential $\phi$.
 
-$$ \frac{\partial \phi}{\partial n} = -1 \text{ on AB (incoming velocity condition)} $$
-$$ \frac{\partial \phi}{\partial n} = +1 \text{ on DC (outgoing velocity condition)} $$
-$$ \frac{\partial \phi}{\partial n} = 0 \text{ on BC and AD (no slip condition)} $$
-$$ \frac{\partial \phi}{\partial n} = 0 \text{ on the obstacle boundary (no slip condition)} $$
-$$ \phi = 0 \text{ at the point C} $$
+$$
+\begin{align}
+& \frac{\partial \phi}{\partial n} = -1 &\text{ on AB (incoming velocity condition)} \\
+& \frac{\partial \phi}{\partial n} = +1 &\text{ on DC (outgoing velocity condition)} \\
+& \frac{\partial \phi}{\partial n} = 0 &\text{ on BC and AD (no slip condition)} \\
+& \frac{\partial \phi}{\partial n} = 0 &\text{ on the obstacle boundary (no slip condition)} \\
+& \phi = 0 &\text{ at the point C} \\
+\end{align}
+$$
 
 ## Assignment
 
@@ -63,7 +67,7 @@ The resulting function is called the *stream function* and has some notable prop
 * Incompressibility is the integrability condition
 * $\psi_x = u$
 * $\psi_y = -v$
-* The irrotationality condition implies that \psi satisfies the Laplace equation
+* The irrotationality condition implies that $\psi$ satisfies the Laplace equation
 
 ### Velocity Potential
 
@@ -211,21 +215,21 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 #### Coarse
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_coarse_mesh.tif)
+![](./assets/circle_coarse_mesh.tif)
 
 #### Fine
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_fine_mesh.tif)
+![](./assets/circle_fine_mesh.tif)
 
 ### Pill
 
 #### Coarse
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_coarse_mesh.tif)
+![](./assets/pill_coarse_mesh.tif)
 
 #### Fine
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_fine_mesh.tif)
+![](./assets/pill_fine_mesh.tif)
 
 ## Question 4
 
@@ -233,11 +237,11 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ### Circle
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_potential.png)
+![](./assets/circle_potential.png)
 
 ### Pill
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_potential.png)
+![](./assets/pill_potential.png)
 
 ## Question 5
 
@@ -245,11 +249,12 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ### Circle
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_coarse_u.tif)
+![](./assets/circle_coarse_u.tif)
 
 ### Pill
 
-# **TODO**
+![](./assets/pill_coarse_u.png)
+# **TODO: get image from lz**
 
 ## Question 6
 
@@ -257,20 +262,20 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ### Circle
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_abaqus_arrows.tif)
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_fine_vp.tif)
+![](./assets/circle_abaqus_arrows.tif)
+![](.assets/circle_fine_vp.tif)
 
 ### Pill
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_abaqus_arrows.tif)
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_fine_vp.tif)
+![](./assets/pill_abaqus_arrows.tif)
+![](./assets/pill_fine_vp.tif)
 
 ## Question 7
 
 > (5%) Color plots of the pressure distribution profile in $\Omega$, only for the fine mesh. Hint: Use Bernoulli theorem to obtain the pressure and assume that the density of the fluid is $\rho = 1$.
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_pressure.png)
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_pressure.png)
+![](./assets/circle_pressure.png)
+![](./assets/pill_pressure.png)
 
 ## Question 8
 
@@ -282,29 +287,50 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 #### Coarse
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_coarse_path.png)
+![](./assets/circle_coarse_path.png)
 
 #### Fine
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/circle_fine_path.png)
+![](./assets/circle_fine_path.png)
 
 ### EE', FF', GG'
 
 #### Coarse
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_coarse_path.png)
+![](./assets/pill_coarse_path.png)
 
 #### Fine
 
-![](/Users/adil/dev/ENMEE4332/flow_project/docs/assets/pill_fine_path.png)
+![](./assets/pill_fine_path.png)
 
 ## Question 9
 
 > (5%) The code should also output the Average Half Band Width (AHBW) of the global stiffness matrix (for both meshes). Add it to your report. Is the mesh numbering ideal or can it be improved to get sparser matrices?
 
+<center>
+
+|        | Circle   | Pill     |
+|--------|----------|----------|
+| Coarse | 112.0867 | 116.9721 |
+| Fine   | 160.5695 | 185.3103 |
+
+*Average Half Bandwidth values*
+</center>
+
+
 ## Question 10
 
 > (5%) A short discussion on physical and numerical implications and some concluding remarks and suggestions on improving the project.
+
+Form the figure, we get from the ABAQUS and Matlab not only matched with the approximate trends but also the values with each other, which means the numerical ways we used is reasonable and feasible.
+
+Since the hole of the two models do have the curve parts, thus as the mesh gets fine, the arch could be more accurate and give out a better result.
+
+From the circle hole model, we can find that the velocity potential decrease greatly when the fluid encountered with the circle hole, figure 5,6,9&10. That is because of the circle make the velocity of the fluid increase suddenly at the top and bottom of the circle hole area, we can see it from figure 7,8,11&12. Also, the same to the pill model at the two semi-circle parts from the top and the bottom.
+
+The result form the pressure calculation also testify that the fluid has a higher speed in the region of the upper and lower part of the holes, which is in consistence with the conclusion we get before, figure 13&14.
+
+To refine the mesh could be one of the best way to improve the project. As the mesh grows finer, the calculation could be more accurate and give out a better view of the picture. Also as the mesh refines, we need more time to calculate all the result, so may be in the future we can improve the calculation method with the codes which will save a lot of time.
 
 ## Question 11
 
@@ -312,7 +338,7 @@ $$ \textbf{K}^e \textbf{d}^e = \textbf{f}^e $$
 
 ## Question 12
 
-> (5%) Appendix B: a Hardcopy of your code, including many comments in the code itself. Don't include mesh connectivity and coordinates in the hardcopy, these should only be uploaded with your zip file.
+> (5%) Appendix B: A Hardcopy of your code, including many comments in the code itself. Don't include mesh connectivity and coordinates in the hardcopy, these should only be uploaded with your zip file.
 
 ## Bonus
 
